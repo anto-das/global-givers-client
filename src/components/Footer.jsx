@@ -3,6 +3,9 @@ import brandLogo from '../assets/earth-globe-symbol-with-heart_1308-115403.avif'
 import { IoLocationSharp } from "react-icons/io5";
 import { MdOutlineKeyboardDoubleArrowRight, MdOutlineMailOutline } from 'react-icons/md';
 import { BsTelephoneFill } from 'react-icons/bs';
+import { FaFacebookF } from 'react-icons/fa';
+import { IoLogoTwitter, IoLogoYoutube } from 'react-icons/io';
+import { SiGithub } from 'react-icons/si';
 const Footer = () => {
     return (
         <footer className='bg-[#2E2E2E] p-10'>
@@ -18,16 +21,16 @@ const Footer = () => {
         {/* popular tags */}
         <nav >
           <h6 className="text-xl font-bold text-base-200 uppercase">popular tags</h6>
-          <div className='flex gap-2'>
+          <div className='flex lg:flex-row md:flex-row flex-col gap-2'>
             <button className="btn rounded-none bg-[#535353] text-gray-300 border-none shadow-none hover:text-white font-sm hover:bg-[#29AF8A]">Global-Impact</button>
           <button className=" btn rounded-none bg-[#535353] text-gray-300 border-none shadow-none hover:text-white font-sm hover:bg-[#29AF8A]">Giving</button>
           <button className="btn rounded-none bg-[#535353] text-gray-300 border-none shadow-none hover:text-white font-sm hover:bg-[#29AF8A]">Difference</button>
           </div>
-          <div className='flex gap-2'>
+          <div className='flex lg:flex-row md:flex-row flex-col gap-2'>
             <button className="btn rounded-none bg-[#535353] text-gray-300 border-none shadow-none hover:text-white font-sm hover:bg-[#29AF8A]">Nonprofit</button>
             <button className="btn rounded-none bg-[#535353] text-gray-300 border-none shadow-none hover:text-white font-sm hover:bg-[#29AF8A]">Volunteer</button>
             </div>
-          <div className='flex gap-2'>
+          <div className='flex lg:flex-row md:flex-row flex-col gap-2'>
             <button className="btn rounded-none bg-[#535353] text-gray-300 border-none shadow-none hover:text-white font-sm hover:bg-[#29AF8A]">Support</button>
             <button className="btn rounded-none bg-[#535353] text-gray-300 border-none shadow-none hover:text-white font-sm hover:bg-[#29AF8A]">Communities</button>
             <button className="btn rounded-none bg-[#535353] text-gray-300 border-none shadow-none hover:text-white font-sm hover:bg-[#29AF8A]">Kindness</button>
@@ -45,12 +48,20 @@ const Footer = () => {
          <p className='border-b text-[#535353] py-4 w-full hover:text-white flex items-center gap-2'> <MdOutlineKeyboardDoubleArrowRight />Video</p>
         </nav>
        </div>
-        <div className='pb-10'>
-          <h2 className="text-xl font-bold text-base-200 uppercase text-center border-b border-[#535353]">contact us</h2>
+      
+        <div className=''>
+          <h2 className="text-xl font-bold text-base-200 uppercase text-center">contact us</h2>
+          <div className="divider border-b border-[#535353]"></div>
             <p className='text-[#535353] justify-center pt-2 hover:text-white flex items-center gap-2'> < IoLocationSharp/> Narayanganj,Dhaka,Bangladesh</p>
-            <p className='text-[#535353] justify-center py-2 hover:text-white flex items-center gap-2'> <MdOutlineMailOutline /> global-givers@gmail.com </p>
+            <p className='text-[#535353] justify-center py-2 hover:text-white flex items-center gap-2'> <MdOutlineMailOutline /> ahirdas4455@gmail.com </p>
             <p className='text-[#535353] justify-center hover:text-white flex items-center gap-2'> <BsTelephoneFill/> +8801240879318</p>
         </div>
+        <div className='flex justify-center items-center gap-5 py-5'>
+        <a className='text-[#535353] hover:text-white text-lg' href=""><FaFacebookF /></a>
+        <a className='text-[#535353] hover:text-white text-lg' href=""><IoLogoYoutube /></a>
+        <a className='text-[#535353] hover:text-white text-lg' href=""><SiGithub /></a>
+        <a className='text-[#535353] hover:text-white text-lg' href=""><IoLogoTwitter /></a>
+       </div>
         <p className='text-center text-[#535353] font-bold'>COPYRIGHTS &copy; 2025 BY AHIR ANTO. ALL RIGHT RESERVED.</p>
       </footer>
     );

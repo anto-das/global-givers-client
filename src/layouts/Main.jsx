@@ -4,9 +4,9 @@ import Footer from "../components/Footer";
 
 const Main = () => {
     return (
-        <section className="relative top-0">
+        <section className="relative top-0 z-0">
             {/* navbar */}
-            <div className="sticky top-0">
+            <div className="sticky top-0 z-10">
         <Navbar></Navbar>
             </div>
 {/* outlet */}

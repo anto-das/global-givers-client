@@ -1,0 +1,122 @@
+[
+  {
+    "_id": "66493c5e1c0d5a001e3f1a01",
+    "thumbnail": "https://i.ibb.co/B27sqP1N/card-1.jpg",
+    "postTitle": "Blood Donation Camp",
+    "description": "Join our healthcare team to support a local blood donation drive.",
+    "category": "healthcare",
+    "location": "Dhaka, Bangladesh",
+    "volunteersNeeded": 10,
+    "deadline": "2025-05-24"
+  },
+  {
+    "_id": "66493c5e1c0d5a001e3f1a02",
+    "thumbnail": "https://i.ibb.co/Y4NVF1kK/card-2.jpg",
+    "postTitle": "Weekend School Support",
+    "description": "Assist underprivileged children in learning basic subjects.",
+    "category": "education",
+    "location": "Nairobi, Kenya",
+    "volunteersNeeded": 5,
+    "deadline": "2025-05-27"
+  },
+  {
+    "_id": "66493c5e1c0d5a001e3f1a03",
+    "thumbnail": "https://i.ibb.co/wZjx2RBL/card-3.jpg",
+    "postTitle": "Clean City Campaign",
+    "description": "Be a part of a city cleanup effort for a greener community.",
+    "category": "social service",
+    "location": "Lagos, Nigeria",
+    "volunteersNeeded": 20,
+    "deadline": "2025-05-30"
+  },
+  {
+    "_id": "66493c5e1c0d5a001e3f1a04",
+    "thumbnail": "https://i.ibb.co/qLf5RcHy/card-4.jpg",
+    "postTitle": "Pet Shelter Helpers",
+    "description": "Support local animal shelter with feeding and cleaning.",
+    "category": "animal welfare",
+    "location": "New York, USA",
+    "volunteersNeeded": 8,
+    "deadline": "2025-05-26"
+  },
+  {
+    "_id": "66493c5e1c0d5a001e3f1a05",
+    "thumbnail": "https://i.ibb.co/3yMNqTzd/card-5.jpg",
+    "postTitle": "Medical Camp Organizers",
+    "description": "Help organize a free medical checkup camp for rural people.",
+    "category": "healthcare",
+    "location": "Barisal, Bangladesh",
+    "volunteersNeeded": 12,
+    "deadline": "2025-05-28"
+  },
+  {
+    "_id": "66493c5e1c0d5a001e3f1a06",
+    "thumbnail": "https://i.ibb.co/3yMNqTzd/card-6.jpg",
+    "postTitle": "Community Tutoring",
+    "description": "Teach English and Math to students in remote areas.",
+    "category": "education",
+    "location": "Lima, Peru",
+    "volunteersNeeded": 6,
+    "deadline": "2025-05-25"
+  },
+  {
+    "_id": "66493c5e1c0d5a001e3f1a07",
+    "thumbnail": "https://i.ibb.co/tMbbdjh8/card-7.jpg",
+    "postTitle": "Elderly Care Volunteers",
+    "description": "Spend quality time with the elderly in a care home.",
+    "category": "social service",
+    "location": "Berlin, Germany",
+    "volunteersNeeded": 4,
+    "deadline": "2025-06-01"
+  },
+  {
+    "_id": "66493c5e1c0d5a001e3f1a08",
+    "thumbnail": "https://i.ibb.co/ynMx3c6x/card-5.jpg",
+    "postTitle": "Vaccination Drive Support",
+    "description": "Support a mass vaccination drive in rural clinics.",
+    "category": "healthcare",
+    "location": "Mumbai, India",
+    "volunteersNeeded": 15,
+    "deadline": "2025-05-29"
+  },
+  {
+    "_id": "66493c5e1c0d5a001e3f1a09",
+    "thumbnail": "https://i.ibb.co/3yMNqTzd/card-4.jpg",
+    "postTitle": "Book Donation Drive",
+    "description": "Collect and distribute books to rural schools.",
+    "category": "education",
+    "location": "Cairo, Egypt",
+    "volunteersNeeded": 7,
+    "deadline": "2025-05-27"
+  },
+  {
+    "_id": "66493c5e1c0d5a001e3f1a0a",
+    "thumbnail": "https://i.ibb.co/qLf5RcHy/card-3.jpg",
+    "postTitle": "Tree Plantation Mission",
+    "description": "Plant trees across the city to fight deforestation.",
+    "category": "social service",
+    "location": "Johannesburg, South Africa",
+    "volunteersNeeded": 25,
+    "deadline": "2025-05-31"
+  },
+  {
+    "_id": "66493c5e1c0d5a001e3f1a0b",
+    "thumbnail": "https://i.ibb.co/wZjx2RBL/card-2.jpg",
+    "postTitle": "Animal Rescue Patrol",
+    "description": "Join our patrol to rescue stray and injured animals.",
+    "category": "animal welfare",
+    "location": "Manila, Philippines",
+    "volunteersNeeded": 10,
+    "deadline": "2025-05-30"
+  },
+  {
+    "_id": "66493c5e1c0d5a001e3f1a0c",
+    "thumbnail": "https://i.ibb.co/wZjx2RBL/card-1.jpg",
+    "postTitle": "First Aid Training Volunteers",
+    "description": "Assist in conducting first aid training in rural schools.",
+    "category": "healthcare",
+    "location": "Kathmandu, Nepal",
+    "volunteersNeeded": 9,
+    "deadline": "2025-05-26"
+  }
+]
