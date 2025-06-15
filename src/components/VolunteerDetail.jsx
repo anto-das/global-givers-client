@@ -3,7 +3,10 @@ import { IoLocationSharp } from "react-icons/io5";
 import { MdDateRange, MdOutlineMarkEmailUnread } from "react-icons/md";
 import { useLoaderData } from "react-router-dom";
 import Modal from "./Modal";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 const VolunteerDetail = () => {
+  const {user} = useContext(AuthContext)
      const loadingData= useLoaderData();
      const {_id,description,deadline,category,postTitle,thumbnail,organizerName,organizerEmail,location,volunteersNeeded} =loadingData;
     return (
@@ -27,7 +30,9 @@ const VolunteerDetail = () => {
 {deadline} </span>
     <p>{description}</p>
     <div className="card-actions justify-center">
-      <button  onClick={()=>document.getElementById('my_modal_4').showModal()} className="btn border-none shadow-none bg-[#29AF8A] rounded-none text-white text-lg hover:btn hover:rounded-none hover:text-white hover:bg-[#535353] hover:text-lg hover:border-none hover:shadow-none w-full">Be a Volunteer</button>
+      {
+        organizerEmail !== user?.email && <button  onClick={()=>document.getElementById('my_modal_4').showModal()} className="btn border-none shadow-none bg-[#29AF8A] rounded-none text-white text-lg hover:btn hover:rounded-none hover:text-white hover:bg-[#535353] hover:text-lg hover:border-none hover:shadow-none w-full">Be a Volunteer</button>
+      }
     </div>
   </div>
   {/* You can open the modal using document.getElementById('ID').showModal() method */}

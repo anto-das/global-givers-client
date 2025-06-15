@@ -4,10 +4,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 import toast from 'react-hot-toast';
+import useTitle from '../hooks/useTitle';
 
 const LoginPage = () => {
   const {googleSignIn,signInUser,error} = useContext(AuthContext);
   const [showPassword,setShowPassword] = useState(false);
+  // dynamic title
+  useTitle("Login-yourself")
   const navigate = useNavigate();
   const location = useLocation();
   const handleGoogleSign = () =>{
@@ -41,7 +44,7 @@ const LoginPage = () => {
          <div className='relative'>
          <input type={`${showPassword? "text" :"password"}`} name='password' className="input w-full" placeholder="Password" />
          <div onClick={() => setShowPassword(!showPassword)}>
-         {showPassword ? <button className='hover:bg-white border-none text-lg absolute right-3 top-3 z-10'><IoMdEye /></button> : <button className='hover:bg-white border-none text-lg absolute right-3 top-3 z-10'><IoMdEyeOff /></button>}
+         {showPassword ? <p className='hover:bg-white border-none text-lg absolute right-3 top-3 z-5'><IoMdEye /></p> : <p className='hover:bg-white border-none text-lg absolute right-3 top-3 z-5'><IoMdEyeOff /></p>}
          </div>
          </div>
           {error.password && <label className=' text-red-500'>{error?.password}</label>} 

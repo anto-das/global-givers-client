@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../hooks/useTitle';
 
 const ErrorPage = () => {
+    useTitle('Global-Givers-Error-Loading')
     return (
         <div className="text-6xl items-center flex min-h-screen flex-col justify-center space-y-3">
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 64 64">

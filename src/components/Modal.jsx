@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { compareAsc } from 'date-fns';
 const Modal = ({loadingData}) => {
     const {_id,description,deadline,category,postTitle,thumbnail,organizerName,organizerEmail,location,volunteersNeeded}  = loadingData;
     const {user} = useContext(AuthContext);
@@ -27,6 +28,11 @@ const Modal = ({loadingData}) => {
       const requestId = _id;
 
       const formData = {requestId,requestOrganizerName,requestOrganizerEmail,requestThumbnail,requestPostTitle,requestLocation,requestCategory,requestDeadline,requestVolunteersNeeded,requestDescription,volunteerName,volunteerEmail,volunteerSuggestion};
+
+      // // deadline crossed validation
+      // if(compareAsc(new Date(),new Date(deadline))===1){
+      //  return toast.error("Deadline crossed request forbidden")
+      // }
       // send the data client to server-side
       try{
         const {data} = await axios.post(`${import.meta.env.VITE_api_url}/volunteer-requests`,formData)

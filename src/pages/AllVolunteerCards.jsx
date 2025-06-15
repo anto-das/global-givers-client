@@ -2,10 +2,13 @@ import  { useEffect, useState } from 'react';
 import VolunteerCard from '../components/VolunteerCard';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import useTitle from '../hooks/useTitle';
 
 const AllVolunteerCards = () => {
     const [allVolunteers, setAllVolunteers] = useState([]);
     const [searchValue,setSearchValue] = useState('');
+    // dynamic title
+    useTitle("See-All-Volunteers")
     // get all volunteer data from database using axios get method
     useEffect(()=>{
         axios.get(`${import.meta.env.VITE_api_url}/all-volunteers?postTitle=${searchValue}`)

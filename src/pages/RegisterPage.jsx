@@ -4,9 +4,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 import toast from 'react-hot-toast';
+import useTitle from '../hooks/useTitle';
 const RegisterPage = () => {
     const [showPassword,setShowPassword] = useState(false);
     const {googleSignIn,createUser,updateUser,error,setError} = useContext(AuthContext);
+     // dynamic title
+      useTitle("Register-page")
     const navigate = useNavigate();
     const registerWithGoogle = () =>{
       googleSignIn()

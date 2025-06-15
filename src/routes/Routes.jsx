@@ -11,6 +11,8 @@ import PrivateRoutes from "./PrivateRoutes";
 import VolunteerDetailPage from "../pages/VolunteerDetailPage";
 import PostVolunteer from "../pages/postVolunteer";
 import MyVolunteerNeedPage from "../pages/MyVolunteerNeedPage";
+import UpdatePage from "../pages/UpdatePage";
+import MyRequestPage from "../pages/MyRequestPage";
   
   const router = createBrowserRouter([
     {
@@ -40,12 +42,13 @@ import MyVolunteerNeedPage from "../pages/MyVolunteerNeedPage";
           element:<PrivateRoutes><MyVolunteerNeedPage></MyVolunteerNeedPage></PrivateRoutes>
         },
         {
-          path:"/volunteer-update",
-          element:<PrivateRoutes><div>hello update volunteer</div></PrivateRoutes>
+          path:"/volunteer-update/:id",
+          element:<PrivateRoutes><UpdatePage></UpdatePage></PrivateRoutes>,
+          loader:(({params}) => fetch(`${import.meta.env.VITE_api_url}/volunteer-update/${params.id}`))
         },
         {
           path:"/my-requests-volunteer",
-          element:<PrivateRoutes><div>hello requests volunteer</div></PrivateRoutes>
+          element:<PrivateRoutes> <MyRequestPage></MyRequestPage> </PrivateRoutes>
         },
         {
           path:"/login",

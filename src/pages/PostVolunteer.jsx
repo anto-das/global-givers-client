@@ -4,13 +4,15 @@ import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from '../providers/AuthProvider';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import useTitle from '../hooks/useTitle';
 
 
 const PostVolunteer = () => {
     const {user} =useContext(AuthContext)
     const [startDate, setStartDate] = useState(new Date());
+     // dynamic title
+      useTitle("If you need volunteers, feel free to post.")
     // handle form submit
-
     const handleSubmit = async e =>{
       e.preventDefault()
       const form = e.target;

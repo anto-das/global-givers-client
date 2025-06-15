@@ -4,9 +4,14 @@ import { AuthContext } from '../providers/AuthProvider';
 import toast from "react-hot-toast";
 import Message from "../components/Message";
 import { Link } from "react-router-dom";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { TbEdit } from "react-icons/tb";
+import useTitle from "../hooks/useTitle";
 const MyVolunteerNeedPage = () => {
   const {user} = useContext(AuthContext);
     const [myPosts,setMyPosts] = useState([]);
+     // dynamic title
+      useTitle("Volunteer-need-page")
     // get data from DB using Axios
     useEffect(() =>{
       fetchAllPostsData()
@@ -69,7 +74,7 @@ const MyVolunteerNeedPage = () => {
     ${posts.category === 'animal welfare' && 'text-pink-500 bg-pink-100/60'}`}> {posts.category} </td>
         <td> {posts.deadline} </td>
         <td> {posts.organizerEmail} </td>
-        <td> <Link to={"/volunteer-update"}><button className="btn btn-xs bg-blue-400 border-none text-white">Update</button></Link>  <button onClick={() =>modernDelete(posts._id)} className="btn btn-xs bg-red-400 border-none text-white">Delete</button> </td>
+        <td className="flex gap-3 items-center">  <button onClick={() =>modernDelete(posts._id)} className="border-none hover:text-red-400 font-bold text-2xl"><RiDeleteBin6Line /></button> <Link to={`/volunteer-update/${posts._id}`}><button className=" hover:text-blue-400 font-bold text-2xl mt-1 border-none"><TbEdit /></button></Link> </td>
       </tr>)
       }
     </tbody>
