@@ -36,6 +36,7 @@ const Carousel = () => {
             <Slide 
             image={bgImg1}
             text={"Compassionate global change-makers"}
+            title={"Join GlobalGivers and become part of a powerful community creating positive change in lives around the world."}
             ></Slide>
         </SwiperSlide>
         {/* slide 2 */}
@@ -43,6 +44,7 @@ const Carousel = () => {
         <Slide 
         image={bgImg2}
         text={"Volunteering beyond all borders"}
+        title={"Your small act of kindness today can bring hope, strength, and opportunity to someone in need tomorrow."}
         ></Slide>
         </SwiperSlide>
         {/* slide 3 */}
@@ -50,6 +52,7 @@ const Carousel = () => {
         <Slide 
         image={bgImg3} 
         text={"Uniting communities with care"}
+        title={"Together we rise — volunteers, donors, and dreamers building a brighter future for every soul we reach."}
         ></Slide>
         </SwiperSlide>
         {/* slide 4 */}
@@ -57,6 +60,7 @@ const Carousel = () => {
         <Slide 
         image={bgImg4}
         text={"Empowering lives through service"}
+        title={"Be the light in someone’s darkness. Give your time, love, or support through GlobalGivers today."}
         ></Slide>
         </SwiperSlide>
         {/* slide 5 */}
@@ -64,6 +68,7 @@ const Carousel = () => {
         <Slide 
         image={bgImg5}
         text={"Inspiring hope through action"}
+        title={"Real change begins with you. Join hands with GlobalGivers and help create a world that cares."}
         ></Slide>
         </SwiperSlide>
        </Swiper>

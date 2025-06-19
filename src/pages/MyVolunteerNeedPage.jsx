@@ -50,7 +50,7 @@ const MyVolunteerNeedPage = () => {
     return (
         <div className="overflow-x-auto w-11/12 mx-auto py-8">
           {
-            myPosts.length !== 0 ?   <table className="table table-zebra">
+            myPosts.length !== 0 ?   <table className="table bg-white table-zebra">
     {/* head */}
     <thead>
       <tr>

@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import VolunteerCard from './VolunteerCard';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -7,10 +7,8 @@ import { BsLayoutTextSidebarReverse } from 'react-icons/bs';
 import { LuLayoutGrid } from "react-icons/lu";
 import VolunteersTableLayout from './VolunteersTableLayout';
 
-
 const VolunteerCards = () => {
     const [volunteers,setVolunteers] = useState([]);
-    const [loader,setLoader] = useState(false);
     const [isTableLayChange,setIsTableLayoutChange] = useState(false)
     axios.get(`${import.meta.env.VITE_api_url}/volunteer-needs`)
     .then(({data}) => setVolunteers(data))
@@ -20,11 +18,11 @@ const VolunteerCards = () => {
        <div className='w-11/12 mx-auto my-8'>
             <div className="mb-5 flex justify-between items-center  w-full rounded-none text-gray-600 border-b text-lg border-gray-500 p-3  shadow-none">
             <h1 className='capitalize font-extrabold'>Change layout and more</h1>
-            {/* layout button */}
+            {/* layout button condition */}
             <div className='flex gap-2'> 
                 {
-                    isTableLayChange ? <button onClick={()=>setIsTableLayoutChange(!isTableLayChange)} className='hover:text-yellow-600'><LuLayoutGrid
-             /></button> : <button onClick={()=>setIsTableLayoutChange(!isTableLayChange)} className=' hover:text-yellow-600'><BsLayoutTextSidebarReverse /></button> 
+                    isTableLayChange ? <button onClick={()=>setIsTableLayoutChange(!isTableLayChange)} className='hover:text-yellow-600 link underline-none'><LuLayoutGrid
+             /></button> : <button onClick={()=>setIsTableLayoutChange(!isTableLayChange)} className=' hover:text-yellow-600 link underline-none'><BsLayoutTextSidebarReverse /></button> 
                 }
                
               <Link to={'/all-volunteers'}>       
@@ -35,6 +33,7 @@ const VolunteerCards = () => {
              </div>
         </div>
 
+        {/* layout changing condition */}
        {
         isTableLayChange ?  
          <div className="overflow-x-auto">
