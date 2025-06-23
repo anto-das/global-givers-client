@@ -30,7 +30,7 @@ const LoginPage = () => {
     .then((result) =>{
       console.log(result.user.email)
       const user = {email:email}
-      axios.post(`${import.meta.env.VITE_api_url}/jwt`,user)
+      axios.post(`${import.meta.env.VITE_api_url}/jwt`,user,{withCredentials:true})
       .then(res => console.log(res.data))
       navigate('/')
       toast.success("successfully login")

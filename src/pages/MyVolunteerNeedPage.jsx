@@ -19,7 +19,7 @@ const MyVolunteerNeedPage = () => {
     },[user])
     const fetchAllPostsData = async () =>{
    try{
-     const {data} = await axios.get(`${import.meta.env.VITE_api_url}/volunteer-need-posts?organizerEmail=${user?.email}`)
+     const {data} = await axios.get(`${import.meta.env.VITE_api_url}/volunteer-need-posts?organizerEmail=${user?.email}`,{withCredentials:true})
      setMyPosts(data)
    } catch(error){
     if(error.response?.status === 404){
