@@ -25,6 +25,17 @@ const Navbar = () => {
   <li> <NavLink to={'/'} className={'text-normal font-bold text-gray-500 uppercase'}>Home</NavLink></li>
  <li> <NavLink to={'/all-volunteers'} className={'text-normal font-bold text-gray-500 uppercase'}>see-all</NavLink></li>
  <li> <NavLink to={'/volunteer-posts'} className={'text-normal font-bold text-gray-500 uppercase'}>add-volunteer</NavLink></li>
+ {/* theme control */}
+     <li>
+       <button className='block lg:hidden md:hidden'>
+     <label className="toggle text-base-content">
+  <input onClick={toggleTheme} type="checkbox" value="synthwave" className="theme-controller"/>
+  <svg aria-label="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></g></svg>
+
+  <svg aria-label="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></g></svg>
+</label>
+  </button>
+     </li>
   </>
     return (
         <div className="navbar bg-base-100 shadow-sm flex justify-between">
@@ -107,14 +118,15 @@ const Navbar = () => {
 </div> : <div className='flex justify-center items-center gap-2'>
   <Link to={'/login'}> <button className='btn bg-[#29AF8A] rounded-none text-white text-lg hover:btn hover:rounded-none hover:text-white hover:bg-[#535353] hover:text-lg'>Login
   </button></Link>
-   <label className="toggle text-base-content ">
-  <input onClick={toggleTheme} type="checkbox" value="synthwave" className="theme-controller" />
-
+  {/* theme control button */}
+  <button className='hidden lg:block md:block'>
+     <label className="toggle text-base-content">
+  <input onClick={toggleTheme} type="checkbox" value="synthwave" className="theme-controller"/>
   <svg aria-label="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></g></svg>
 
   <svg aria-label="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></g></svg>
-
 </label>
+  </button>
 </div>
 }
 
