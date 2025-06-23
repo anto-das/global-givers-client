@@ -18,8 +18,17 @@ const MyVolunteerNeedPage = () => {
         // eslint-disable-next-line 
     },[user])
     const fetchAllPostsData = async () =>{
-    const {data} = await axios.get(`${import.meta.env.VITE_api_url}/volunteer-need-posts?organizerEmail=${user?.email}`)
-    setMyPosts(data)
+   try{
+     const {data} = await axios.get(`${import.meta.env.VITE_api_url}/volunteer-need-posts?organizerEmail=${user?.email}`)
+     setMyPosts(data)
+   } catch(error){
+    if(error.response?.status === 404){
+      setMyPosts([])
+      toast.error("No posts found for your email")
+    }else{
+      toast.error("something went wrong...")
+    }
+   }
     }
     const handleDelete = async (id) =>{
       try{
