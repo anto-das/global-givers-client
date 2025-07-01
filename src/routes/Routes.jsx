@@ -27,7 +27,7 @@ import MyRequestPage from "../pages/MyRequestPage";
         {
           path:"/volunteers/:id",
           element:<PrivateRoutes><VolunteerDetailPage></VolunteerDetailPage></PrivateRoutes>,
-          loader:({params})=>fetch(`${import.meta.env.VITE_api_url}/volunteers/${params.id}`),
+          loader:({params})=>fetch(`${import.meta.env.VITE_api_url}/volunteers/${params.id}`,{credentials:"include"}),
         },
         {
           path: "/all-volunteers",

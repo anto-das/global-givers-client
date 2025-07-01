@@ -1,19 +1,21 @@
 import  { useEffect, useState } from 'react';
 import VolunteerCard from '../components/VolunteerCard';
-import axios from 'axios';
 import toast from 'react-hot-toast';
 import useTitle from '../hooks/useTitle';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 
 const AllVolunteerCards = () => {
     const [allVolunteers, setAllVolunteers] = useState([]);
     const [searchValue,setSearchValue] = useState('');
+    const axiosSecure = useAxiosSecure();
     // dynamic title
     useTitle("See-All-Volunteers")
     // get all volunteer data from database using axios get method
     useEffect(()=>{
-        axios.get(`${import.meta.env.VITE_api_url}/all-volunteers?postTitle=${searchValue}`)
+        axiosSecure.get(`/all-volunteers?postTitle=${searchValue}`)
     .then( ({data})=> setAllVolunteers(data))
     .catch(err => toast.err(err.message))
+    // eslint-disable-next-line
     },[searchValue])
     // get search input field data 
     const handleSearchFiled = e =>{

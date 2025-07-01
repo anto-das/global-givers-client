@@ -3,6 +3,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../firebase/firebase.config';
 import { onAuthStateChanged } from 'firebase/auth/cordova';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 // eslint-disable-next-line
 export const AuthContext = createContext(null);
 
@@ -13,23 +14,27 @@ const AuthProvider = ({ children }) => {
     const googleProvider = new GoogleAuthProvider();
     // create user
     const createUser = (email,password) =>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password,)
     }
     // sign in user with email and password
     const signInUser = (email,password) =>{
-        // toast.success("Successfully Sign In With Email Password")
+        setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
     // user information update
     const updateUser = (updatedData) =>{
+        setLoading(true)
       return updateProfile(auth.currentUser,updatedData)
     }
     // googleLogout
     const googleSignIn = () =>{
+        setLoading(true)
        return signInWithPopup(auth,googleProvider);
     }
     // user logout
     const handleLogout = () =>{
+        setLoading(true)
         signOut(auth)
         .catch(err =>console.log(err))
         toast.error("successfully logout")
@@ -38,8 +43,23 @@ const AuthProvider = ({ children }) => {
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth,currentUser =>{
             console.log(currentUser)
-            setUser(currentUser);
-            setLoading(false)
+              setUser(currentUser);
+            if(currentUser?.email){
+                 const user = {email:currentUser.email}
+                    axios.post(`${import.meta.env.VITE_api_url}/jwt`,user,{withCredentials:true})
+                    .then((res) =>{
+                        console.log('login:',res.data)
+                        setLoading(false)
+                    })
+            }
+            else{
+                axios.post(`${import.meta.env.VITE_api_url}/logout`,{},{withCredentials:true})
+                .then(res =>{
+                    console.log('logout:', res.data)
+                    setLoading(false)
+                })
+            }
+          
         });
         return ()=>{
             unSubscribe()

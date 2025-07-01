@@ -3,10 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import toast from "react-hot-toast";
 import useTitle from "../hooks/useTitle";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyRequestPage = () => {
     const {user} = useContext(AuthContext);
     const [myRequests,setMyRequest] = useState([]);
+    const axiosSecure = useAxiosSecure();
      // dynamic title
       useTitle("My-request-page")
     useEffect(()=>{
@@ -14,7 +16,8 @@ const MyRequestPage = () => {
         // eslint-disable-next-line
     },[user])
     const fetchAllRequestData = async () =>{
-        const {data} = await axios.get(`${import.meta.env.VITE_api_url}/my-request-volunteer?volunteerEmail=${user?.email}`)
+        // const {data} = await axios.get(`${import.meta.env.VITE_api_url}/my-request-volunteer?volunteerEmail=${user?.email}`)
+        const {data} = await axiosSecure(`/my-request-volunteer?volunteerEmail=${user?.email}`)
         setMyRequest(data)
     }
     const handleDelete = async (id) =>{

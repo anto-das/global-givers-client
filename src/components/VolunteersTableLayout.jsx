@@ -29,7 +29,7 @@ const VolunteersTableLayout = ({volunteer}) => {
     ${volunteer.category === 'social service' && 'text-green-400'}
     ${volunteer.category === 'animal welfare' && 'text-pink-500'}`}>{volunteer.category}</td>
         <th>
-          <Link to={`/volunteers/${volunteer._id}`}><button className="btn btn-ghost btn-xs">details</button></Link>
+          <Link to={`/volunteers/${volunteer._id}`}><button className="btn btn-ghost btn-xs hover:btn hover:btn-xs hover:text-white hover:bg-[#29AF8A]">details</button></Link>
         </th>
       </tr>
     );

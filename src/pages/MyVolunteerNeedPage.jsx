@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { TbEdit } from "react-icons/tb";
 import useTitle from "../hooks/useTitle";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 const MyVolunteerNeedPage = () => {
   const {user} = useContext(AuthContext);
     const [myPosts,setMyPosts] = useState([]);
+    const axiosSecure = useAxiosSecure();
      // dynamic title
       useTitle("Volunteer-need-page")
     // get data from DB using Axios
@@ -19,7 +21,7 @@ const MyVolunteerNeedPage = () => {
     },[user])
     const fetchAllPostsData = async () =>{
    try{
-     const {data} = await axios.get(`${import.meta.env.VITE_api_url}/volunteer-need-posts?organizerEmail=${user?.email}`,{withCredentials:true})
+    const {data} = await axiosSecure(`/volunteer-need-posts?organizerEmail=${user?.email}`)
      setMyPosts(data)
    } catch(error){
     if(error.response?.status === 404){

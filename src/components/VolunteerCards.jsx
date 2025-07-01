@@ -1,4 +1,4 @@
-import  {  useState } from 'react';
+import  {  useContext, useEffect, useState } from 'react';
 import VolunteerCard from './VolunteerCard';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -6,13 +6,17 @@ import toast from 'react-hot-toast';
 import { BsLayoutTextSidebarReverse } from 'react-icons/bs';
 import { LuLayoutGrid } from "react-icons/lu";
 import VolunteersTableLayout from './VolunteersTableLayout';
+import { AuthContext } from '../providers/AuthProvider';
 
 const VolunteerCards = () => {
+  const {user} = useContext(AuthContext)
     const [volunteers,setVolunteers] = useState([]);
     const [isTableLayChange,setIsTableLayoutChange] = useState(false)
-    axios.get(`${import.meta.env.VITE_api_url}/volunteer-needs`)
+    useEffect(()=>{
+      axios.get(`${import.meta.env.VITE_api_url}/volunteer-needs`)
     .then(({data}) => setVolunteers(data))
     .catch(err => toast.error(err.message))
+    },[user])
 
     return (
        <div className='w-11/12 mx-auto my-8'>

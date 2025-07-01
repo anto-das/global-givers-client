@@ -1,11 +1,10 @@
-import React, { useContext, useState } from 'react';
+import  { useContext, useState } from 'react';
 import GoogleIcon from '../assets/google-logo-search-new.svg';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 import toast from 'react-hot-toast';
 import useTitle from '../hooks/useTitle';
-import axios from 'axios';
 
 const LoginPage = () => {
   const {googleSignIn,signInUser,error} = useContext(AuthContext);
@@ -27,11 +26,7 @@ const LoginPage = () => {
     const email = form.email.value;
     const password = form.password.value;
     signInUser(email,password)
-    .then((result) =>{
-      console.log(result.user.email)
-      const user = {email:email}
-      axios.post(`${import.meta.env.VITE_api_url}/jwt`,user,{withCredentials:true})
-      .then(res => console.log(res.data))
+    .then(() =>{
       navigate('/')
       toast.success("successfully login")
     })

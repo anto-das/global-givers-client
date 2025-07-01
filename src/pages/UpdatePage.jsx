@@ -1,10 +1,11 @@
-import axios from "axios";
+
 import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../providers/AuthProvider";
 import DatePicker from "react-datepicker";
 import { useLoaderData } from "react-router-dom";
 import useTitle from "../hooks/useTitle";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const UpdatePage = () => {
     const data = useLoaderData();
@@ -13,6 +14,7 @@ const UpdatePage = () => {
     const {_id,description,category,postTitle,thumbnail,location,volunteersNeeded} = data;
      const {user} =useContext(AuthContext)
         const [startDate, setStartDate] = useState(new Date());
+        const axiosSecure = useAxiosSecure();
 
     const handleSubmit = async e =>{
           e.preventDefault()
@@ -31,7 +33,8 @@ const UpdatePage = () => {
           // send the data client-side to server-side
           console.log(formData)
           try{
-            const {data} = await axios.put(`${import.meta.env.VITE_api_url}/volunteer-update/${_id}`,formData);
+            // const {data} = await axios.put(`${import.meta.env.VITE_api_url}/volunteer-update/${_id}`,formData);
+            const {data} = await axiosSecure.put(`/volunteer-update/${_id}`,formData)
             if(data.matchedCount > 0){
                 toast.success("Your data has been successfully updated")
             }

@@ -2,14 +2,15 @@ import React, { useContext, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from '../providers/AuthProvider';
-import axios from 'axios';
 import toast from 'react-hot-toast';
 import useTitle from '../hooks/useTitle';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 
 
 const PostVolunteer = () => {
     const {user} =useContext(AuthContext)
     const [startDate, setStartDate] = useState(new Date());
+    const axiosSecure = useAxiosSecure();
      // dynamic title
       useTitle("If you need volunteers, feel free to post.")
     // handle form submit
@@ -30,7 +31,7 @@ const PostVolunteer = () => {
       // send the data client-side to server-side
       console.log(formData)
       try{
-        const {data} = await axios.post(`${import.meta.env.VITE_api_url}/volunteer-posts`,formData);
+        const {data} = await axiosSecure.post(`/volunteer-posts`,formData)
         if(data.acknowledged){
           form.reset()
          return toast.success("Your volunteer data save in the DB successfully")
