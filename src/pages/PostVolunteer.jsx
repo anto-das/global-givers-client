@@ -29,7 +29,7 @@ const PostVolunteer = () => {
 
       const formData = {organizerName,organizerEmail,thumbnail,postTitle,location,category,deadline,volunteersNeeded,description};
       // send the data client-side to server-side
-      console.log(formData)
+      //console.log(formData)
       try{
         const {data} = await axiosSecure.post(`/volunteer-posts`,formData)
         if(data.acknowledged){
@@ -37,7 +37,8 @@ const PostVolunteer = () => {
          return toast.success("Your volunteer data save in the DB successfully")
         }
       } catch(err){
-        console.log(err)
+        //console.log(err)
+        toast.error(err)
       }
     }
 

@@ -24,9 +24,9 @@ const MyRequestPage = () => {
       try{
         const {data} = await axios.delete(`${import.meta.env.VITE_api_url}/my-volunteer-request/${id}`)
         fetchAllRequestData()
-        console.log(data)
+        //console.log(data)
       } catch(error){
-        console.log(error)
+        //console.log(error)
       }
     }
     const modernDelete = id =>{

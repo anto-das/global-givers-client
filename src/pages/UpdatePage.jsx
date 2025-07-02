@@ -31,7 +31,7 @@ const UpdatePage = () => {
     
           const formData = {organizerName,organizerEmail,thumbnail,postTitle,location,category,deadline,volunteersNeeded,description};
           // send the data client-side to server-side
-          console.log(formData)
+          //console.log(formData)
           try{
             // const {data} = await axios.put(`${import.meta.env.VITE_api_url}/volunteer-update/${_id}`,formData);
             const {data} = await axiosSecure.put(`/volunteer-update/${_id}`,formData)
@@ -39,7 +39,7 @@ const UpdatePage = () => {
                 toast.success("Your data has been successfully updated")
             }
           } catch(err){
-            console.log(err)
+            //console.log(err)
           }
         }
     return (

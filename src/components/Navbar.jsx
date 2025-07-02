@@ -20,7 +20,7 @@ const Navbar = () => {
   const toggleTheme = () => {
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
-  // console.log(user.photoURL)
+  // //console.log(user.photoURL)
   const links =<>
   <li> <NavLink to={'/'} className={'text-normal font-bold text-gray-500 uppercase'}>Home</NavLink></li>
  <li> <NavLink to={'/all-volunteers'} className={'text-normal font-bold text-gray-500 uppercase'}>see-all</NavLink></li>

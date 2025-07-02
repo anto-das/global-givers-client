@@ -42,20 +42,20 @@ const AuthProvider = ({ children }) => {
     // onAuthStateChange
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth,currentUser =>{
-            console.log(currentUser)
+            //console.log(currentUser)
               setUser(currentUser);
             if(currentUser?.email){
                  const user = {email:currentUser.email}
                     axios.post(`${import.meta.env.VITE_api_url}/jwt`,user,{withCredentials:true})
                     .then((res) =>{
-                        console.log('login:',res.data)
+                        //console.log('login:',res.data)
                         setLoading(false)
                     })
             }
             else{
                 axios.post(`${import.meta.env.VITE_api_url}/logout`,{},{withCredentials:true})
                 .then(res =>{
-                    console.log('logout:', res.data)
+                    //console.log('logout:', res.data)
                     setLoading(false)
                 })
             }
