@@ -6,16 +6,19 @@ import { BsTelephoneFill } from 'react-icons/bs';
 import { FaFacebookF } from 'react-icons/fa';
 import { IoLogoTwitter, IoLogoYoutube } from 'react-icons/io';
 import { SiGithub } from 'react-icons/si';
+import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <footer className='bg-[#2E2E2E] p-5'>
        <div className="footer sm:footer-horizontal">
         {/* brand logo */}
        <nav>
+          <Link to={'/'}>
           <div className="flex justify-around items-center">
           <img src={brandLogo} className='w-12 rounded-full border-[#29AF8A]' alt='brand-logo'/>
           <h1> <span className='text-3xl text-[#29AF8A] font-bold'>Global</span><br /><span className='text-sm font-bold text-[#29AF8A]'>G i v e r s</span> </h1>
           </div>
+          </Link>
           <p className='text-[#535353] mt-2 border-b hidden lg:block md:block'>Global Givers connects donors and volunteers <br /> worldwide to support communities in need <br /> through compassion, transparency, and <br /> collective action for change.</p>
         </nav>
         {/* popular tags */}
@@ -56,7 +59,7 @@ const Footer = () => {
         </div>
         </nav>
        </div>
-        <p className='text-center text-[#535353] font-bold pt-2 text-start'>COPYRIGHTS &copy; 2025 BY AHIR ANTO. ALL RIGHT RESERVED.</p>
+        <p className='text-[#535353] font-bold pt-2 text-start'>COPYRIGHTS &copy; 2025 BY AHIR ANTO. ALL RIGHT RESERVED.</p>
       </footer>
     );
 };

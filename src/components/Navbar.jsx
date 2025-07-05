@@ -40,10 +40,12 @@ const Navbar = () => {
     return (
         <div className="navbar bg-base-100 shadow-sm flex justify-between">
         {/* brand logo */}
+<Link to={"/"}>
 <div className="flex justify-around  items-center">
 <img src={brandLogo} className=' w-10 md:lg:w-12 lg:w-12 rounded-full border-t-4 border-r-4  border-[#29AF8A]' alt='brand-logo'/>
 <h1> <span className='text-2xl md:text-3xl lg:text-3xl text-[#29AF8A] font-bold'>Global</span><br /><span className='text-xs md:text-sm lg:text-sm font-bold text-[#29AF8A]'>G i v e r s</span> </h1>
 </div>
+</Link>
 {/* navigate links */}
 <div className="navbar-center hidden md:flex lg:flex">
 <ul className="menu menu-horizontal px-1">
