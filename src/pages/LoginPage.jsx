@@ -33,8 +33,7 @@ const LoginPage = () => {
     .catch(err =>toast.error(err.message))
   }
     return (
-        <div className='w-11/14 mx-auto bg-[#4fe2c5] hero min-h-[calc(100vh-306px)]'>
-  <div className="flex-col lg:flex-row-reverse w-1/2 py-5">
+        <div className="flex-col lg:flex-row-reverse w-11/12 mx-auto py-5">
             <h1 className=' text-white text-3xl font-bold py-5 text-center rounded-t-lg bg-[#1a5f51]'>Login</h1>
       <div className="bg-base-100 card-body shadow-2xl shrink-0 rounded-b-lg">
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
@@ -61,7 +60,6 @@ const LoginPage = () => {
 </svg>GitHub</button>
       </div>
   </div>
-        </div>
     );
 };
 

@@ -40,8 +40,7 @@ const RegisterPage = () => {
         
     }
     return (
-        <div className='w-11/14 mx-auto bg-[#4fe2c5] hero min-h-[calc(100vh-306px)]'>
-        <div className=" w-1/2 py-10">
+        <div className="w-11/12 mx-auto py-10">
                   <h1 className=' text-white text-3xl font-bold py-5 text-center rounded-t-lg bg-[#1a5f51]'>Register Form</h1>
             <div className="bg-base-100 card-body shadow-2xl shrink-0 rounded-b-lg">
               <form onSubmit={handleSubmit} className="space-y-2">
@@ -82,7 +81,6 @@ const RegisterPage = () => {
       </svg>GitHub</button>
             </div>
         </div>
-              </div>
     );
 };
 

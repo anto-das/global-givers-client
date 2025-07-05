@@ -21,4 +21,4 @@ Description,
  
  - **Client Side:** [https://global-givers.web.app | https://global-givers.firebaseapp.com]
 
- - **Server Side** [ https://globalgivers-server.vercel.app ] 
+ - **Server Side** [ https://globalgivers-server.vercel.app] 
